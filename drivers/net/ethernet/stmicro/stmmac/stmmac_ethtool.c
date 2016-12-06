@@ -355,9 +355,7 @@ static int stmmac_ethtool_setsettings(struct net_device *dev,
 		return 0;
 	}
 
-	spin_lock(&priv->lock);
 	rc = phy_ethtool_sset(phy, cmd);
-	spin_unlock(&priv->lock);
 
 	return rc;
 }
