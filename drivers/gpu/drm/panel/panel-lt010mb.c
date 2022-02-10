@@ -100,11 +100,6 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		return;
 
 	usleep_range(17000, 18000);
-
-	lt101mb_dcs_write_seq_static(ctx, 0x11);
-	mdelay(120);
-	lt101mb_dcs_write_seq_static(ctx, 0x29);
-	mdelay(50);
 	
 	 lt101mb_dcs_write_seq_static(ctx, 0xFF, 0x98, 0x81, 0x03);  
 		mdelay(11);
