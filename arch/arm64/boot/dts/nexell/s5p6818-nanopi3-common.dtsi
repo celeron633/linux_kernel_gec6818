@@ -820,28 +820,31 @@
 	};
 };
 
-&dp_drm_lvds {
-	remote-endpoint = <&lcd_panel>;
-	status = "ok";
+&dp_drm_mipi {
+	status = "okay";
+	hs_bitrate = <400>;
+	lp_bitrate = <80>;
 
-	display-timing {
-		clock-frequency = <50000000>;
-		hactive = <1024>;
-		vactive = <600>;
-		hfront-porch = <84>;
-		hback-porch = <84>;
-		hsync-len = <88>;
-		vfront-porch = <10>;
-		vback-porch = <10>;
-		vsync-len = <20>;
+	panel@0 {
+		compatible = "lt101mb02000";
+		backlight = <&backlight>;
+		reg = <0>;
+		reset-gpio = <&gpio_a 21 0>;
+		power-on-delay= <50>;
+		reset-delay = <100>;
+		init-delay = <100>;
 	};
 
 	dp_control {
-		clk_src_lv0 = <3>;
-		clk_div_lv0 = <16>;
+		clk_src_lv0 = <0>;
+		clk_div_lv0 = <5>;
 		clk_src_lv1 = <7>;
 		clk_div_lv1 = <1>;
-		out_format = <2>;
+		out_format = <3>;
+		vs_start_offset = <2387>;
+		ev_start_offset = <2387>;
+		vs_end_offset = <0>;
+		ev_end_offset = <0>;
 	};
 };
 
