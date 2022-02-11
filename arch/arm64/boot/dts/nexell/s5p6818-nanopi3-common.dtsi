@@ -827,7 +827,7 @@
 
 	panel@0 {
 		compatible = "lt101mb02000";
-		backlight = <&backlight>;
+
 		reg = <0>;
 		reset-gpio = <&gpio_a 21 0>;
 		power-on-delay= <50>;
