@@ -837,8 +837,7 @@
 	};
 	
 	           disp_timing: display-timing {
-            native-mode = <&timing0>;
-			timing0: timing0 {
+
 				clock-frequency = <61000000>;
 				hactive = <720>;
 				vactive = <1280>;
@@ -852,7 +851,7 @@
 				vsync-active = <0>;
 				de-active = <0>;
 				pixelclk-active = <0>;
-			    };
+
                      };
 		
 	dp_control {
