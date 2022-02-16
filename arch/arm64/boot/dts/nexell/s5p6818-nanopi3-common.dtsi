@@ -832,9 +832,11 @@
 		reset-gpio = <&gpio_a 21 0>;
 		power-on-delay= <50>;
 		reset-delay = <100>;
-		init-delay = <100>;
-		
-            disp_timing: display-timing {
+		init-delay = <100>;	
+ 
+	};
+	
+	           disp_timing: display-timing {
             native-mode = <&timing0>;
 			timing0: timing0 {
 				clock-frequency = <61000000>;
@@ -853,8 +855,6 @@
 			    };
                      };
 		
-	};
-
 	dp_control {
 		clk_src_lv0 = <0>;
 		clk_div_lv0 = <5>;
