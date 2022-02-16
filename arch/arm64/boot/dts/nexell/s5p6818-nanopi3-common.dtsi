@@ -834,7 +834,7 @@
 		reset-delay = <100>;
 		init-delay = <100>;
 		
-            disp_timings: display-timings {
+            disp_timing: display-timing {
             native-mode = <&timing0>;
 			timing0: timing0 {
 				clock-frequency = <61000000>;
