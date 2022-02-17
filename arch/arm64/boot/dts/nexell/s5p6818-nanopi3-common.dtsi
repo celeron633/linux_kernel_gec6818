@@ -39,6 +39,8 @@
 	model = "FriendlyElec boards based on Nexell s5p6818";
 	compatible = "friendlyelec,nanopi3",
 		   "nexell,s5p6818";
+        billy { status ="okay";
+	};
 
 	memory {
 		device_type = "memory";
