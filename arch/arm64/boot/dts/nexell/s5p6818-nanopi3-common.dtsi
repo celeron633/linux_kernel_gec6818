@@ -621,7 +621,7 @@
 
 	panel: panel-friendlyelec {
 		compatible = "lcds";
-		status = "disabled";
+		status = "okay";
 
 		/*
 		pinctrl-names = "default";
@@ -872,7 +872,7 @@
 &dp_drm_hdmi {
 	skip-boot-connect;
 	ddc-i2c-bus = <&i2c_1>;
-	status = "disabled";
+	status = "okay";
 
 	mode {
 		width = <1280>;
