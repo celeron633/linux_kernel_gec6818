@@ -822,7 +822,7 @@
 
 
 
-&dsi {
+dsi {
     status = "okay";
   
 };
