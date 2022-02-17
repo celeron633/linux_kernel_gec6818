@@ -821,7 +821,7 @@
 };
 
 &dp_drm_mipi {
-	status = "disabled";
+	status = "okay";
 	hs_bitrate = <400>;
 	lp_bitrate = <80>;
 
@@ -872,7 +872,7 @@
 &dp_drm_hdmi {
 	skip-boot-connect;
 	ddc-i2c-bus = <&i2c_1>;
-	status = "ok";
+	status = "disabled";
 
 	mode {
 		width = <1280>;
