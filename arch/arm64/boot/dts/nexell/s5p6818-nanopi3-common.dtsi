@@ -822,7 +822,12 @@
 	};
 };
 
+<<<<<<< HEAD
 
+=======
+        dsi { status ="okay";
+	};
+>>>>>>> parent of a80d5aca961b (Update s5p6818-nanopi3-common.dtsi)
 
 
 &dp_drm_hdmi {
