@@ -100,7 +100,7 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		return;
 
 	usleep_range(17000, 18000);
-	
+/*	
     //   printf("Start of DSC Mipi Commands to Panel\n");
 	lt101mb_dcs_write_seq_static(ctx, 0xFF, 0x98, 0x81, 0x03); 
 	// printf("Finished sending first DSC Command to Panel\n");
@@ -506,6 +506,7 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 	lt101mb_dcs_write_seq_static(ctx, 0x29);	// Set Display On
 	mdelay(120);	
 	// printf("Finished sending Display On Command 0x29 command\n");
+	*/
 }
 
 static int lt101mb_power_on(struct lt101mb *ctx)
