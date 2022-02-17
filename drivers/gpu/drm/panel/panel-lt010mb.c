@@ -101,65 +101,54 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 
 	usleep_range(17000, 18000);
 	
-	 lt101mb_dcs_write_seq_static(ctx, 0xFF, 0x98, 0x81, 0x03);  
+       printf("Start of DSC Mipi Commands to Panel\n");
+	lt101mb_dcs_write_seq_static(ctx, 0xFF, 0x98, 0x81, 0x03); 
+	 printf("Finished sending first DSC Command to Panel\n");
 		mdelay(11);
+        printf("Finished first command 11ms delay\n");
 	 lt101mb_dcs_write_seq_static(ctx, 0x01, 0x00);  
 		mdelay(11);	
 	
 	 lt101mb_dcs_write_seq_static(ctx, 0x02, 0x00);  
 		mdelay(11);	
-
 	lt101mb_dcs_write_seq_static(ctx, 0x03, 0x72);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x04, 0x00);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x05, 0x00);  
 		mdelay(11);	
 	
 	 lt101mb_dcs_write_seq_static(ctx, 0x06, 0x09);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x07, 0x00);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x08, 0x00);  
 		mdelay(11);	
 	
 	
 	 lt101mb_dcs_write_seq_static(ctx, 0x09, 0x01);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x0a, 0x00);  
-		mdelay(11);	
-
+		mdelay(11);
+	 printf("Finished sending Tenth DSC Command to Panel\n");
 	 lt101mb_dcs_write_seq_static(ctx, 0x0b, 0x00);  
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x0c, 0x01);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x0d, 0x00);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x0e, 0x00);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x0f, 0x00);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x10, 0x00);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x11, 0x00);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x12, 0x00);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x13, 0x00);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x14, 0x00);  
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x15, 0x00);  
@@ -172,7 +161,6 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x19, 0x00);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x1a, 0x00);  
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x1b, 0x00);  
@@ -185,7 +173,6 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x1f, 0x80);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x20, 0x05);  
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x21, 0x02);  
@@ -206,7 +193,6 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x29, 0x02);  
 		mdelay(11);	
-
 	
 	 lt101mb_dcs_write_seq_static(ctx, 0x2a, 0x00);  
 		mdelay(11);	
@@ -240,7 +226,6 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x39, 0x00);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x3a, 0x40);  
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x3b, 0x40);  
@@ -253,7 +238,6 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x3f, 0x00);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x40, 0x00);  
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x41, 0x00);  
@@ -284,7 +268,6 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x59, 0x67);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x5a, 0x89);  
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x5b, 0xab);  
@@ -317,10 +300,8 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x69, 0x07);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x6a, 0x02);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x6b, 0x02);  
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x6c, 0x02);  
@@ -341,7 +322,6 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x74, 0x02);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x75, 0x01);  
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x76, 0x00);  
@@ -364,7 +344,6 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x7f, 0x07);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x80, 0x02);  
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x81, 0x02);  
@@ -387,16 +366,12 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		mdelay(11);	
 	 lt101mb_dcs_write_seq_static(ctx, 0x8a, 0x02);  
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0xFF, 0x98, 0x81, 0x04);  // Set to Page 4 Command
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x6c, 0x15);  // Set VCORE Setting to 0x15
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x6e, 0x2a);  // Set Power Control2 to 0x2A
 		mdelay(11);	
-
 	 lt101mb_dcs_write_seq_static(ctx, 0x6f, 0x34);  // Set Power Control3 to 0x34
 		mdelay(11);            
 	
@@ -446,33 +421,33 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		mdelay(11);    
        	 lt101mb_dcs_write_seq_static(ctx, 0xa5, 0x2a);      // Set Positive Gamma Correction-6 to 0x2A
 		mdelay(11); 	
-      	 lt101mb_dcs_write_seq_static(ctx, 0xa6, 0x08);    // Set Positive Gamma Correction-7 to 0x1E
+      	 lt101mb_dcs_write_seq_static(ctx, 0xa6, 0x1e);    // Set Positive Gamma Correction-7 to 0x1E
 		mdelay(11);     
-       	 lt101mb_dcs_write_seq_static(ctx, 0xa7, 0x1a);     // Set Positive Gamma Correction-8 to 0x1F
+       	 lt101mb_dcs_write_seq_static(ctx, 0xa7, 0x1f);     // Set Positive Gamma Correction-8 to 0x1F
 		mdelay(11);      
-       	 lt101mb_dcs_write_seq_static(ctx, 0xa8, 0x27);    // Set Positive Gamma Correction-9 to 0x8B
+       	 lt101mb_dcs_write_seq_static(ctx, 0xa8, 0x8b);    // Set Positive Gamma Correction-9 to 0x8B
 		mdelay(11);     
-       	 lt101mb_dcs_write_seq_static(ctx, 0xa9, 0x15);    // Set Positive Gamma Correction-10 to 0x1B
+       	 lt101mb_dcs_write_seq_static(ctx, 0xa9, 0x1b);    // Set Positive Gamma Correction-10 to 0x1B
 		mdelay(11);      
-       	 lt101mb_dcs_write_seq_static(ctx, 0xaa, 0x17);      // Set Positive Gamma Correction-11 to 0x27
+       	 lt101mb_dcs_write_seq_static(ctx, 0xaa, 0x27);      // Set Positive Gamma Correction-11 to 0x27
 		mdelay(11);    
-       	 lt101mb_dcs_write_seq_static(ctx, 0xab, 0x2a);     // Set Positive Gamma Correction-12 to 0x78
+       	 lt101mb_dcs_write_seq_static(ctx, 0xab, 0x78);     // Set Positive Gamma Correction-12 to 0x78
 		mdelay(11); 	
-       	 lt101mb_dcs_write_seq_static(ctx, 0xac, 0x17);     // Set Positive Gamma Correction-13 to 0xac
+       	 lt101mb_dcs_write_seq_static(ctx, 0xac, 0x18);     // Set Positive Gamma Correction-13 to 0xac
 		mdelay(11);    
-       	 lt101mb_dcs_write_seq_static(ctx, 0xad, 0x2a);      // Set Positive Gamma Correction-14 to 0x2A
+       	 lt101mb_dcs_write_seq_static(ctx, 0xad, 0x18);      // Set Positive Gamma Correction-14 to 0x2A
 		mdelay(11); 	
-      	 lt101mb_dcs_write_seq_static(ctx, 0xae, 0x08);    // Set Positive Gamma Correction-15 to 0x08
+      	 lt101mb_dcs_write_seq_static(ctx, 0xae, 0x4c);    // Set Positive Gamma Correction-15 to 0x08
 		mdelay(11);     
-       	 lt101mb_dcs_write_seq_static(ctx, 0xaf, 0x1a);     // Set Positive Gamma Correction-16 to 0x1a
+       	 lt101mb_dcs_write_seq_static(ctx, 0xaf, 0x21);     // Set Positive Gamma Correction-16 to 0x1a
 		mdelay(11);      
        	 lt101mb_dcs_write_seq_static(ctx, 0xb0, 0x27);    // Set Positive Gamma Correction-17 to 0x27
 		mdelay(11);     
-       	 lt101mb_dcs_write_seq_static(ctx, 0xb1, 0x15);    // Set Positive Gamma Correction-18 to 0x15
+       	 lt101mb_dcs_write_seq_static(ctx, 0xb1, 0x54);    // Set Positive Gamma Correction-18 to 0x15
 		mdelay(11);      
-       	 lt101mb_dcs_write_seq_static(ctx, 0xb2, 0x17);      // Set Positive Gamma Correction-19 to 0x17
+       	 lt101mb_dcs_write_seq_static(ctx, 0xb2, 0x67);      // Set Positive Gamma Correction-19 to 0x17
 		mdelay(11);    
-       	 lt101mb_dcs_write_seq_static(ctx, 0xb3, 0x2a);     // Set Positive Gamma Correction-20 to 0x2a
+       	 lt101mb_dcs_write_seq_static(ctx, 0xb3, 0x39);     // Set Positive Gamma Correction-20 to 0x2a
 		mdelay(11);	
     
   
@@ -516,21 +491,21 @@ static void lt101mb_set_sequence(struct lt101mb *ctx)
 		mdelay(11);    
        	 lt101mb_dcs_write_seq_static(ctx, 0xd3, 0x39);     // Set Negative Gamma Correction-20 to 0x39
 		mdelay(11);		
-
   	 lt101mb_dcs_write_seq_static(ctx, 0xFF, 0x98, 0x81, 0x00);  // Set to Page 0 command
 		mdelay(11);  
        	 lt101mb_dcs_write_seq_static(ctx, 0x36, 0x03);     
 		mdelay(11);
-
        
   	lt101mb_dcs_write_seq_static(ctx, 0x35);	 
 	mdelay(11);       
 		    
 	lt101mb_dcs_write_seq_static(ctx, 0x11);	 // Set Sleep Out
+	 printf("Finished sending sleep out 0x11 command\n");
 	mdelay(120);
+	 printf("Finished delay after sending sleep out command \n");
 	lt101mb_dcs_write_seq_static(ctx, 0x29);	// Set Display On
-	mdelay(120);		    
-		    
+	mdelay(120);	
+	 printf("Finished sending Display On Command 0x29 command\n");
 }
 
 static int lt101mb_power_on(struct lt101mb *ctx)
