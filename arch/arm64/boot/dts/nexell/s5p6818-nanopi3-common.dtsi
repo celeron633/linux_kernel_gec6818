@@ -621,7 +621,7 @@
 
 	panel: panel-friendlyelec {
 		compatible = "lcds";
-		status = "okay";
+		status = "disabled";
 
 		/*
 		pinctrl-names = "default";
