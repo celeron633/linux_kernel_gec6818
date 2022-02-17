@@ -821,8 +821,7 @@
 	};
 };
 
-        dsi { 
-	status ="okay";
+        dsi { status ="okay";
 	};
 
 
