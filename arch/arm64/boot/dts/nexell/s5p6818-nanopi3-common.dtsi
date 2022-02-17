@@ -829,17 +829,17 @@
         status = "okay";
         compatible = "simple-panel-dsi";
 		reg = <0>;
-	//	reset-gpio = <&gpio_a 21 0>;
-	//	power-on-delay= <50>;
-	//	reset-delay = <100>;
-	//	init-delay = <100>;
+		reset-gpio = <&gpio_a 21 0>;
+		power-on-delay= <50>;
+		reset-delay = <100>;
+		init-delay = <100>;
        // backlight = <&backlight>;
-        reset-gpios = <&gpio_a 21 0>;
-        reset-delay-ms = <10>;
-        enable-delay-ms = <60>;
-        prepare-delay-ms = <60>;
-        unprepare-delay-ms = <60>;
-        disable-delay-ms = <60>;
+      //  reset-gpios = <&gpio_a 21 0>;
+      //  reset-delay-ms = <10>;
+      //  enable-delay-ms = <60>;
+      //  prepare-delay-ms = <60>;
+      //  unprepare-delay-ms = <60>;
+      //  disable-delay-ms = <60>;
 		dsi,flags = <(MIPI_DSI_MODE_VIDEO | MIPI_DSI_MODE_VIDEO_BURST)>;
 
 		dsi,format = <MIPI_DSI_FMT_RGB888>;
