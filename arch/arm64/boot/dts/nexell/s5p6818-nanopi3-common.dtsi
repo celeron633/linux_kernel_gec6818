@@ -822,10 +822,6 @@
 
 
 
-dsi {
-    status = "okay";
-  
-};
 
 &dp_drm_hdmi {
 	skip-boot-connect;
