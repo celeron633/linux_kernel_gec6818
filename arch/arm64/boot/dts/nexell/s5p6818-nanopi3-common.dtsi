@@ -822,7 +822,7 @@
 
 
 
-&dp_drm_mipi {
+&dsi {
     status = "okay";
   
 };
