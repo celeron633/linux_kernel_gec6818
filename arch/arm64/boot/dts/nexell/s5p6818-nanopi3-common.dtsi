@@ -821,7 +821,7 @@
 };
 
 &dp_drm_mipi {
-	status = "okay";
+	status = "disabled";
 	hs_bitrate = <400>;
 	lp_bitrate = <80>;
 
