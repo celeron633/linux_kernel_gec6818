@@ -5,7 +5,7 @@ EXTRAVERSION =
 NAME = Blurry Fish Butt
 
 ARCH=arm64
-CROSS_COMPILE=aarch64-linux-gnu-
+CROSS_COMPILE=aarch64-linux-
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
