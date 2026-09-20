@@ -34,20 +34,17 @@ sudo apt-get install -y libssl-dev   # for scripts/extract-cert (module signing)
 from `scripts/dtc/`, unlike u-boot which uses whatever `dtc` is on `$PATH`.)
 
 ```sh
-make ARCH=arm64 CROSS_COMPILE=aarch64-none-elf- gec6818_linux_defconfig
-make ARCH=arm64 CROSS_COMPILE=aarch64-none-elf- -j"$(nproc)" Image dtbs
+export ARCH=arm64
+export CROSS_COMPILE=aarch64-none-elf-
+make gec6818_linux_defconfig
+make -j"$(nproc)" Image dtbs
 ```
 
-**`ARCH`/`CROSS_COMPILE` must be passed as `make` command-line
-arguments, not environment variables** - the opposite gotcha from
-`u-boot_gec6818` (see that repo's README). This kernel's top-level
-`Makefile` hardcodes them directly (`ARCH=arm64` /
-`CROSS_COMPILE=aarch64-linux-`, added in the `gec6818: specify ARCH &
-CROSS_COMPILE in Makefile` commit) as plain assignments, which take
-priority over an environment variable of the same name (`export
-CROSS_COMPILE=...; make ...` silently keeps using the hardcoded
-`aarch64-linux-` and fails with `aarch64-linux-gcc: not found`) - only
-a command-line assignment (`make CROSS_COMPILE=...`) overrides it.
+The top-level `Makefile` sets `ARCH ?= arm64` / `CROSS_COMPILE ?=
+aarch64-linux-` as defaults (so it still builds out of the box if you
+have an `aarch64-linux-*` toolchain and set nothing) - `?=` means an
+environment variable of the same name takes precedence, same
+convention as `u-boot_gec6818`.
 
 Output:
 
@@ -106,17 +103,15 @@ sudo apt-get install -y libssl-dev   # scripts/extract-cert 要用（模块签�
 现成的 `dtc` 不一样。）
 
 ```sh
-make ARCH=arm64 CROSS_COMPILE=aarch64-none-elf- gec6818_linux_defconfig
-make ARCH=arm64 CROSS_COMPILE=aarch64-none-elf- -j"$(nproc)" Image dtbs
+export ARCH=arm64
+export CROSS_COMPILE=aarch64-none-elf-
+make gec6818_linux_defconfig
+make -j"$(nproc)" Image dtbs
 ```
 
-**`ARCH`/`CROSS_COMPILE` 必须当 `make` 命令行参数传，不能用环境变量**——跟
-`u-boot_gec6818` 那边的坑正好反过来（见那个仓库的 README）。这份内核代码的顶层
-`Makefile` 里直接硬编码了 `ARCH=arm64`/`CROSS_COMPILE=aarch64-linux-`（`gec6818:
-specify ARCH & CROSS_COMPILE in Makefile` 那次提交加的），普通赋值，优先级比同名
-环境变量高（`export CROSS_COMPILE=...; make ...` 会被无视，还是用硬编码的
-`aarch64-linux-`，然后报 `aarch64-linux-gcc: not found`）——只有命令行传参
-（`make CROSS_COMPILE=...`）才能真正覆盖掉。
+顶层 `Makefile` 把 `ARCH ?= arm64`/`CROSS_COMPILE ?= aarch64-linux-` 设成默认值
+（这样你要是手头正好有 `aarch64-linux-*` 工具链、啥也不设也能直接编），`?=` 意味着
+同名环境变量优先级更高，跟 `u-boot_gec6818` 是一套惯例。
 
 编译产物：
 
