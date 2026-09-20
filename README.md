@@ -50,14 +50,8 @@ Output:
 
 - `arch/arm64/boot/Image` - the kernel `booti` loads (see
   `u-boot_gec6818`'s README - `kernel=Image` in its default env)
-- `arch/arm64/boot/dts/nexell/s5p6818-gec6818.dtb` - the device tree
-
-**Heads up**: `u-boot_gec6818`'s default env expects
-`dtb_name=s5p6818-gec6818-rev01.dtb`, but this kernel only ever
-produces `s5p6818-gec6818.dtb` (no `-rev01` suffix - see
-`arch/arm64/boot/dts/nexell/Makefile`) - the two repos have drifted.
-Either `setenv dtb_name s5p6818-gec6818.dtb` in u-boot, or rename the
-file when you copy it to the boot partition/TFTP server.
+- `arch/arm64/boot/dts/nexell/s5p6818-gec6818-rev01.dtb` - the device
+  tree, matching `u-boot_gec6818`'s default `dtb_name` env var
 
 Building modules (`make ARCH=arm64 CROSS_COMPILE=aarch64-none-elf-
 modules`) mostly works with this same bare-metal toolchain, but at
@@ -117,13 +111,8 @@ make -j"$(nproc)" Image dtbs
 
 - `arch/arm64/boot/Image` —— `booti` 加载的内核（见 `u-boot_gec6818` README，
   默认环境变量 `kernel=Image`）
-- `arch/arm64/boot/dts/nexell/s5p6818-gec6818.dtb` —— 设备树
-
-**提醒一下**：`u-boot_gec6818` 默认环境变量是 `dtb_name=s5p6818-gec6818-rev01.dtb`，
-但这份内核实际只会生成 `s5p6818-gec6818.dtb`（没有 `-rev01` 后缀，见
-`arch/arm64/boot/dts/nexell/Makefile`）——两个仓库这块对不上了。要么在 u-boot 里
-`setenv dtb_name s5p6818-gec6818.dtb`，要么拷到 boot 分区/TFTP 服务器时把文件名
-改一下。
+- `arch/arm64/boot/dts/nexell/s5p6818-gec6818-rev01.dtb` —— 设备树，文件名跟
+  `u-boot_gec6818` 默认的 `dtb_name` 环境变量对得上
 
 编译模块（`make ARCH=arm64 CROSS_COMPILE=aarch64-none-elf- modules`）用这同一个
 裸机工具链大部分能过，但至少有一个老模块过不了：`fs/coda` 需要 glibc 版
