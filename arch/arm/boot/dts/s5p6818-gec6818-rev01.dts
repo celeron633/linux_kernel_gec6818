@@ -1,0 +1,13 @@
+/*
+ * GEC6818 with the S5P6818 in AArch32 (CONFIG_ARCH_S5P6818 on arch/arm):
+ * the arm64 device tree, minus PSCI - there is no secure monitor below
+ * a 32-bit kernel entered in secure SVC by bl1-gec6818/32-bit u-boot,
+ * so an SMC would hang.
+ *
+ * SPDX-License-Identifier: GPL-2.0+
+ */
+#include "../../../arm64/boot/dts/nexell/s5p6818-gec6818-rev01.dts"
+
+/ {
+	/delete-node/ psci;
+};

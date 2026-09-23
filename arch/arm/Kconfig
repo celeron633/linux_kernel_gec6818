@@ -953,6 +953,8 @@ source "arch/arm/mach-zynq/Kconfig"
 
 source "arch/arm/mach-s5p4418/Kconfig"
 
+source "arch/arm/mach-s5p6818/Kconfig"
+
 # ARMv7-M architecture
 config ARCH_EFM32
 	bool "Energy Micro efm32"

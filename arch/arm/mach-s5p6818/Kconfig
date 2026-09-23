@@ -1,0 +1,25 @@
+config ARCH_S5P6818
+	bool "Nexell S5P6818 in AArch32"
+	select CPU_V7
+	select ARM_AMBA
+	select ARM_GIC
+	select HAVE_ARM_ARCH_TIMER
+	select ARCH_HAS_CPUFREQ
+	select GENERIC_TIME
+	select GENERIC_CLOCKEVENTS
+	select ZONE_DMA
+	select SPARSE_IRQ
+	select COMMON_CLK
+	select ARCH_HAS_RESET_CONTROLLER
+	select RESET_CONTROLLER
+	select PINCTRL
+	select ARCH_REQUIRE_GPIOLIB
+	select ARM_PATCH_PHYS_VIRT
+	select USE_OF
+	select HAVE_S3C2410_I2C if I2C
+	select HAVE_S3C2410_WATCHDOG if WATCHDOG
+	help
+	  The S5P6818's eight Cortex-A53 cores run in AArch32, as left by
+	  bl1-gec6818 built with UBOOT_ARCH=aarch32 and a 32-bit u-boot:
+	  secure SVC, no PSCI firmware. Uses the arm64 device tree
+	  (arch/arm64/boot/dts/nexell). Only CPU0 is brought up.
