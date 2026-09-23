@@ -302,7 +302,6 @@
 				interrupts = <0x4 IRQ_TYPE_EDGE_FALLING>;
 				nx,id = <0>;
 				/* vdd_arm-supply = <&VCC1P1_ARM_PMIC>; */
-				/* vdd_core-supply = <&VCC1P0_CORE_PMIC>; */
 				regulators {
 					VCC_LDO1:
 						axp22_rtcldo{ PMIC_PDATA_INIT( 0,
@@ -374,9 +373,14 @@
 							"axp228_1p1_arm",
 							600000, 1540000, 1, 1, 1200000,
 							1, 0xF) };
-					VCC1P0_CORE_PMIC:
+					/*
+					 * DCDC3 is the second phase of VCC1P1_ARM
+					 * (R49), bridged to DCDC2 by BL1. VCC1P0_CORE
+					 * comes from a fixed DC-DC, not the AXP.
+					 */
+					VCC1P1_ARM_PMIC_PH2:
 						axp22_dcdc3 { PMIC_PDATA_INIT(14,
-							"axp228_1p0_core",
+							"axp228_1p1_arm_ph2",
 							600000, 1860000, 1, 1, 1200000,
 							1, 0xF) };
 					VCC_DCDC4:
