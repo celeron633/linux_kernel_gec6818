@@ -188,9 +188,10 @@
 		};
 
 		dvfs:dynamic-freq@bb000 {
-			supply_name = "vdd_arm_spu";
+			supply_name = "vdd_arm_axp";
+			/* also set as optional: nexell-cpufreq adds its AXP margin
+			 * (+20mV) only when supply_optional is present */
 			supply_optional = "vdd_arm_axp";
-			vdd_arm_spu-supply = <&VCC1P1_ARM_SPU>;
 			vdd_arm_axp-supply = <&VCC1P1_ARM_PMIC>;
 			status = "okay";
 			dvfs-tables = <1400000 1200000
@@ -284,8 +285,8 @@
 
 		i2c3_gpio:i2c@3 {
 			compatible = "i2c-gpio";
-			gpios = <&gpio_e 31 0	/* sda */
-				&gpio_e 30 0	/* scl */
+			gpios = <&gpio_c 16 0	/* sda: PMIC_SDA */
+				&gpio_c 15 0	/* scl: PMIC_SCL */
 				>;
 
 			i2c-gpio,delay-us = <10>;	/* ~100 kHz */
@@ -294,19 +295,6 @@
 		};
 
 		i2c3_gpio:i2c@3 {
-			spu1705@2d {
-				compatible = "spu1705,fe-pmu";
-				reg = <0x2d>;
-				regulators {
-					VCC1P1_ARM_SPU: DCDC1 {
-						regulator-name = "vdd_arm_1.3V";
-						regulator-min-microvolt = <905000>;
-						regulator-max-microvolt = <1265000>;
-						regulator-always-on;
-					};
-				};
-			};
-
 			axp228@34 {
 				compatible = "x-powers,axp228";
 				reg = <0x34>;
@@ -600,6 +588,7 @@
 		io,gpio = <&gpio_c 15 0>;
 		pinctrl-names = "default";
 		pinctrl-0 = <&onewire_pin>;
+		status = "disabled";	/* GPIOC15 is PMIC_SCL on GEC6818 */
 	};
 
 	gpio_key: gpio_keys {
